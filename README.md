@@ -2,7 +2,7 @@
 
 ## Introduction
 
-- This repo contains the Interactive Weather forecast application with real API project.
+- This repo contains the Interactive Weeather forecast application with real API project.
 
 ## Team Members
 - Nwosu Chukwuemeka     @Kachu1212    :FullStack Engineer
