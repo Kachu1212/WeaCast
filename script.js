@@ -7,7 +7,7 @@ const temperature_element = document.getElementById("temperature");
 const humidity_element = document.getElementById("humidity");
 const wind_speed_element = document.getElementById("wind-speed");
 const country_element = document.getElementById("country");
-const city_element = document.getElementById("city");
+const town_element = document.getElementById("city");
 
 
 // Fetching Data for OpenWeatherMap API
@@ -35,12 +35,12 @@ fetch(apiUrl)
     const temperature = data.main.temp;
     const humidity = data.main.humidity;
     const wind_speed = data.wind.speed;
-    const city = data.name;
+    const town = data.name;
     const country = data.sys.country;
 
     weather_element.innerText = weather;
     country_element.innerText = country;
-    city_element.innerText = city;
+    town_element.innerText = town;
     temperature_main_element.innerText = temperature;
     weather_description_element.innerText = weather_description;
     humidity_element.innerText = '${humidity}%';
