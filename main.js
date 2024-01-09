@@ -1,5 +1,5 @@
 function updateClock(){
-    const currentDate = new Date();
+    var currentDate = new Date();
 
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1;
@@ -12,8 +12,8 @@ function updateClock(){
 
     hours = hours % 12 || 12;
 
-    document.getElementById('date').textContent = `Date: ${year}-${month}-${day}`;
-    document.getElementById('time').textContent = `Time: ${hours}:${minutes}:${seconds} ${amPM}`;
+    document.getElementById('date').textContent = `${year}-${month}-${day}`;
+    document.getElementById('time').textContent = `${hours}:${minutes}:${seconds} ${amPM}`;
 }
 
 setInterval(updateClock, 1000);

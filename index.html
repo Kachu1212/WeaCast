@@ -7,14 +7,14 @@
     <script src="./main.js"></script>
     <title>WeaCast</title>
 </head>
-<body class="bg-[url('./images/thunderstorm.gif')] bg-center bg-cover bg-no-repeat min-h-screen w-full flex flex-col gap-1 justify-start p-10">
+<body id="weather" class="bg-[url('./images/clear.gif')] bg-center bg-cover bg-no-repeat min-h-screen w-full flex flex-col gap-1 justify-start p-10">
 
     <div class="md:flex block  justify-between w-screen">
 
          <!---Day, date and time--->
        <div class="block w-1/4 justify-around items-center bg-inherit  p-1 gap-2">
-            <div class=" text-blue-900 text-justify text-base h-5 w-40 font-serif font-bold rounded-lg p-1" id="date"></div>
-            <div class=" text-blue-900 text-justify text-base h-5 w-40 font-serif font-bold rounded-lg p-1" id="time"></div>
+            <div class=" text-blue-900 text-justify text-xl h-5 w-40 font-serif font-bold rounded-lg p-1" id="date"></div>
+            <div class=" text-blue-900 text-justify text-xl h-5 w-40 font-serif font-bold rounded-lg p-1" id="time"></div>
        </div>
         
          <!---App title--->   
@@ -33,11 +33,13 @@
     <form
         action=""
         method="get"
+        id="form"
         class="flex w-4/5 md:w-3/5 lg:w-[35%] items-center justify-center gap-2"
         >
         <input
         type="text"
         name="city"
+        id="city"
         placeholder="Enter a city..."
         required
         class="py-2 px-3 w-full rounded-full bg-white text-white text-lg outline outline-2 backdrop-blur-lg ease-in-out duration-300 outline-white/70 focus:bg-white/20"
@@ -57,21 +59,21 @@
     >
         <div id="left" class="flex flex-col">
         <div id="top" class="mb-6">
-            <p class="font-semibold text-4xl text-white">24°C</p>
+            <p id="temperature-main" class="font-semibold text-4xl text-white">24°C</p>
             <p class="font-semibold text-md text-white">Now</p>
         </div>
-        <p class="font-semibold text-xl text-white">Lagos, Nigeria</p>
+        <p class="font-semibold text-xl text-white"><span id="city">Abuja</span>, <span id="country">NG</span></p>
         </div>
         <!-- right -->
         <div id="right" class="flex flex-col">
         <!-- Icon -->
         <div id="right" class="flex justify-end items-stretch">
-        <img class="w-20 h-4w-25" src="./images/sunny-icon.png" alt="" />
+        <img id="icon" class="w-20 h-4w-25" src="./images/sunny-icon.png" alt="" />
         </div>
         <!-- Weather -->
-        <p class="font-semibold text-3xl text-white">Sunny</p>
+        <p id="weather" class="font-semibold text-3xl text-white">Sunny</p>
         <!-- Description -->
-        <p class="font-semibold text-white">clear sky</p>
+        <p id="weather-description" class="font-semibold text-white">clear sky</p>
         </div>
     </div>
 
@@ -87,10 +89,10 @@
             >
             <ion-icon class="w-8 h-8 text-white" name="thermometer"></ion-icon>
             <div class="">
-                <p class="text-sm text-white text-right">Temperature</p>
+                <p  class="text-sm text-white text-right">Temperature</p>
             </div>
             <div class="">
-                <p class="font-bold text-sm text-right text-[#ff5a00]">24.08 °C</p>         
+                <p id="temperature" class="font-bold text-sm text-right text-[#ff5a00]">24.08 °C</p>         
             </div>
             </div>
 
@@ -103,7 +105,7 @@
                 <p class="text-sm text-white text-right">Wind Speed</p>
             </div>
             <div class="">
-                <p class="font-bold text-sm text-right text-[#ff5a00] ">1.18 m/s</p>
+                <p id="wind-speed" class="font-bold text-sm text-right text-[#ff5a00] ">1.18 m/s</p>
                 
             </div>
             </div>
@@ -117,39 +119,39 @@
             <p class="text-sm text-white text-right">Humidity</p>
             </div>
             <div class="">
-                <p class="font-bold text-sm text-right text-[#ff5a00] ">89 %</p>
+                <p id="humidity" class="font-bold text-sm text-right text-[#ff5a00] ">89 %</p>
             </div>
             </div>
             </div>
             </div>
 
             <!---Daily forecast--->
-             <p class=" text-white  text-xl" >3 Days Forecast</p>
+             <p class=" text-white  text-xl gap-72" >3 Days Forecast</p>
 
         <div class="flex max-w-screen-lg mx-auto">
     <!-- Day 1 -->
     <div class="flex-1  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 mr-4 shadow-md cursor-pointer transform ease-in-out hover:scale-[105%]">
-      <p class="text-lg font-bold text-white">Day 1</p>
-      <p class="weather-icon w-10 h-10"><img src="./images/sunny-icon.png" alt="" ></p>
-      <p class="text-lg text-[#ff5a00]">25°C</p>
+      <p id="day+1" class="text-lg font-bold text-white">Day 1</p>
+      <p id="icon" class="weather-icon w-10 h-10"><img src="./images/sunny-icon.png" alt="" ></p>
+      <p id="temperature" class="text-lg text-[#ff5a00]">25°C</p>
     </div>
   
     <!-- Day 2 -->
-    <div class="flex-1  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 mr-4 shadow-md">
-      <p class="text-lg font-bold text-white">Day 2</p>
-      <p class="weather-icon w-10 h-10"><img src="./images/sunny-icon.png" alt=""></p>
-      <p class="text-lg text-[#ff5a00]">35°C</p>
+    <div class="flex-1  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 mr-4 shadow-md cursor-pointer transform ease-in-out hover:scale-[105%]">
+      <p id="day+2" class="text-lg font-bold text-white">Day 2</p>
+      <p id="icon" class="weather-icon w-10 h-10"><img src="./images/sunny-icon.png" alt=""></p>
+      <p id="temperature" class="text-lg text-[#ff5a00]">35°C</p>
     </div>
   
     <!-- Day 3 -->
-    <div class="flex-1  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 shadow-md">
-      <p class="text-lg font-bold text-white">Day 3</p>
-      <p class="weather-icon w-10 h-10"><img src="./images/sunny-icon.png" alt=""></p>
-      <p class="text-lg text-[#ff5a00]">25°C</p>
+    <div class="flex-1  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 shadow-md cursor-pointer transform ease-in-out hover:scale-[105%]">
+      <p id="day+3" class="text-lg font-bold text-white">Day 3</p>
+      <p id="icon" class="weather-icon w-10 h-10"><img src="./images/sunny-icon.png" alt=""></p>
+      <p id="temperature" class="text-lg text-[#ff5a00]">25°C</p>
     </div>
   </div>
   
-
+<script src="script.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
