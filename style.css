@@ -705,10 +705,6 @@ video {
   gap: 1.5rem;
 }
 
-.gap-72 {
-  gap: 18rem;
-}
-
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -752,8 +748,8 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[url\(\'\.\/images\/clear\.gif\'\)\] {
-  background-image: url('./images/clear.gif');
+.bg-\[url\(\`\.\/images\/clear\.gif\`\)\] {
+  background-image: url(`./images/clear.gif`);
 }
 
 .bg-cover {
@@ -851,11 +847,6 @@ video {
 .text-\[\#ff5a00\] {
   --tw-text-opacity: 1;
   color: rgb(255 90 0 / var(--tw-text-opacity));
-}
-
-.text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
 }
 
 .text-white {

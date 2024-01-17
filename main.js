@@ -1,21 +1,37 @@
-function updateClock(){
-    var currentDate = new Date();
+function updateClock() {
+  const months = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+  ];
 
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1;
-    const day = currentDate.getDate();
-    let hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const seconds = currentDate.getSeconds();
+  const days = [
+      'Sun', 'Mon', 'Tue', 'Wed',
+      'Thurs', 'Fri', 'Sat'
+  ];
 
-    const amPM = hours >= 12 ? 'PM' : 'AM';
+  var currentDate = new Date();
 
-    hours = hours % 12 || 12;
+  const year = currentDate.getFullYear();
+  const month = months[currentDate.getMonth()];
+  const day = currentDate.getDate();
+  let hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+  const dayOfWeek = days[currentDate.getDay()];
 
-    document.getElementById('date').textContent = `${year}-${month}-${day}`;
-    document.getElementById('time').textContent = `${hours}:${minutes}:${seconds} ${amPM}`;
+  const amPM = hours >= 12 ? 'PM' : 'AM';
+
+  hours = hours % 12 || 12;
+
+  // Add leading zero to minutes and seconds if they are less than 10
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+  document.getElementById('date').textContent = `${dayOfWeek}, ${day} ${month}, ${year}`;
+  document.getElementById('time').textContent = `${hours}:${formattedMinutes}:${formattedSeconds} ${amPM}`;
 }
 
-setInterval(updateClock, 1000);
-
-updateClock();
+document.addEventListener('DOMContentLoaded', function() {
+  setInterval(updateClock, 1000);
+  updateClock();
+});
