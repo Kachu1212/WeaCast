@@ -60,7 +60,7 @@ setWeatherBackground(weather);
   });
 
   
-// Dynamic Background for city current weather
+// Dynamic Background for any city current weather
 
 const background_element = document.getElementById("background");
 
@@ -153,7 +153,7 @@ async function updateWeatherForecast() {
       const iconElement = document.getElementById(`wicon${i + 1}`);
       const temperatureElement = document.getElementById(`temperature${i + 1}`);
 
-// Update HTML with forecast data
+// Updating HTML with forecast data
       dayElement.innerText = nextThreeDays[i];
       iconElement.src = `https://openweathermap.org/img/wn/${data.list[i * 8].weather[0].icon}.png`;
       temperatureElement.innerText = `${Math.round(data.list[i * 8].main.temp)}°C`;
