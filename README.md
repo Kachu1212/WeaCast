@@ -3,7 +3,8 @@
 ## Description
 
 - This repo contains the Interactive Weeather forecast application with real API project.
-Getting to know the what the weather is plays a crucial part for individuals to make certian decisions and planing. The dynamic featre of the background gives you a feel of what the current weather is and a 3 dyay forecast of the same city.
+Getting to know what the weather is plays a crucial part for individuals to make certian decisions and planning. The dynamic feature of the background gives you a feel of what the current weather is and a 3 day forecast of the same city.
+
 Also you have the date and time situated inside the application to avoid distraction of any sort.
 
 The API provider is http://www.OpenWeatherMap.org
