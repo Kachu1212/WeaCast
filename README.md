@@ -26,7 +26,7 @@ The API provider is http://www.OpenWeatherMap.org
  - run/open the index.html file to deploy it on any browser of your choice
 
 ## Preview
-![image](https://github.com/Kachu1212/WeaCast/images/default_page.png)
+![image](https://github.com/Kachu1212/WeaCast/blob/main/images/default_page.png)
 
 ## Author 
 
